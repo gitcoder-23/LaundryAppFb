@@ -1,0 +1,58 @@
+// You Tut
+
+https://youtube.com/playlist?list=PLkqIFEskVoUJoOXXJ-ayQV_lN_o0gFOpe
+
+---> 44: 13
+
+
+// In new React Native 
+default-- Typescript
+ TS- To-JS (Follow)
+ https://youtu.be/IkBsFHpA3OU
+
+
+// Change Package Name
+
+
+-->com.powerstack.minilaundry
+
+
+
+
+
+
+
+
+// Start React Native-JS
+npx react-native@latest init AwesomeProject
+
+// start React Native Using Typescript
+https://github.com/react-native-community/react-native-template-typescript
+
+https://reactnative.dev/docs/0.70/typescript
+npx react-native init MyApp --template react-native-template-typescript
+
+npx react-native init MyApp --template react-native-template-typescript@6.12.10
+
+// to clear in reactnative
+https://stackoverflow.com/questions/49603408/how-can-i-clean-my-react-native-project-to-back-it-up
+
+
+
+// expo location addition
+1>  https://www.npmjs.com/package/expo-location
+2> Install expo
+>>>https://docs.expo.dev/bare/installing-expo-modules/
+3> npx install-expo-modules
+
+
+
+
+// expo icons
+https://icons.expo.fyi/
+
+// taking css
+https://cssgradient.io/shades-of-red/
+
+// deprecated-react-native-prop-types
+time --> 36: 20
