@@ -2,7 +2,7 @@
 
 https://youtube.com/playlist?list=PLkqIFEskVoUJoOXXJ-ayQV_lN_o0gFOpe
 
----> 44: 13
+---> 1:17: 11
 
 
 // In new React Native 
