@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import * as Location from 'expo-location';
 import HomeScreen from './src/screens/HomeScreen';
 
-const App = () => {
+export default function App() {
   const [displayCurrentAddress, setdisplayCurrentAddress] = useState(
     'we are loading your location',
   );
@@ -99,8 +99,6 @@ const App = () => {
       <HomeScreen displayCurrentAddress={displayCurrentAddress} />
     </SafeAreaView>
   );
-};
-
-export default App;
+}
 
 const styles = StyleSheet.create({});
