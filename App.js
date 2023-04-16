@@ -2,11 +2,15 @@ import {SafeAreaView, StatusBar, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import * as Location from 'expo-location';
 import HomeScreen from './src/screens/HomeScreen';
+import {useDispatch} from 'react-redux';
+import {getLocationAddress} from './src/app/slices/locationSlice';
 
 export default function App() {
-  const [displayCurrentAddress, setdisplayCurrentAddress] = useState(
-    'we are loading your location',
-  );
+  const dispatch = useDispatch();
+
+  // const [displayCurrentAddress, setdisplayCurrentAddress] = useState(
+  //   'we are loading your location',
+  // );
 
   const [locationError, setLocationError] = useState('');
 
@@ -87,7 +91,8 @@ export default function App() {
           let address = `${item.name}, ${item.city}, ${item.postalCode}`;
 
           console.log('get-address-.', address);
-          setdisplayCurrentAddress(address);
+          dispatch(getLocationAddress(address));
+          // setdisplayCurrentAddress(address);
         }
       }
     })();
@@ -96,7 +101,7 @@ export default function App() {
   return (
     <SafeAreaView contentInsetAdjustmentBehavior="automatic">
       <StatusBar styles="auto" />
-      <HomeScreen displayCurrentAddress={displayCurrentAddress} />
+      <HomeScreen />
     </SafeAreaView>
   );
 }

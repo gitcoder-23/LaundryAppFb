@@ -15,12 +15,12 @@ import DressItem from '../components/DressItem';
 import {useDispatch, useSelector} from 'react-redux';
 import {getProducts} from '../app/slices/productSlice';
 
-const HomeScreen = ({displayCurrentAddress}) => {
-  console.log('displayCurrentAddress-->', displayCurrentAddress);
-
+const HomeScreen = () => {
   const {cart} = useSelector(state => state.cart);
+  const {currentAddress} = useSelector(state => state.currentlocation);
 
   console.log('state-cart-->', cart);
+  console.log('currentAddress-home-state-->', currentAddress);
 
   const {allProduct} = useSelector(state => state.product);
 
@@ -98,7 +98,9 @@ const HomeScreen = ({displayCurrentAddress}) => {
         <MaterialIcons name="location-on" size={30} color="#fd5c63" />
         <View>
           <Text style={{fontSize: 18, fontWeight: '600'}}>Home</Text>
-          <Text>{displayCurrentAddress}</Text>
+          <Text>
+            {!currentAddress ? 'we are loading your location' : currentAddress}
+          </Text>
         </View>
 
         <Pressable

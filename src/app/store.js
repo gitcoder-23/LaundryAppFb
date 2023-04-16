@@ -1,10 +1,12 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import cartSlice from './slices/cartSlice';
 import productSlice from './slices/productSlice';
+import locationSlice from './slices/locationSlice';
 
 const combinedReducer = combineReducers({
   cart: cartSlice,
   product: productSlice,
+  currentlocation: locationSlice,
 });
 
 const rootReducer = (state, action) => {
