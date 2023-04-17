@@ -7,6 +7,7 @@ const cartSlice = createSlice({
   },
   reducers: {
     addToCart: (state, action) => {
+      console.log('addedToCart-->', action.payload);
       const itemPresent = state.cart.find(
         item => item.id === action.payload.id,
       );
@@ -17,6 +18,7 @@ const cartSlice = createSlice({
       }
     },
     removeFromCart: (state, action) => {
+      console.log('removedFromCart-->', action.payload);
       const removeItem = state.cart.filter(
         item => item.id !== action.payload.id,
       );
