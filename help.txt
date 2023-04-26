@@ -17,6 +17,10 @@ default-- Typescript
 -->com.powerstack.minilaundry
 
 
+// Need device info
+https://www.npmjs.com/package/react-native-device-info
+
+
 
 
 

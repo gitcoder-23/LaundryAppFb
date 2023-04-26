@@ -3,6 +3,9 @@ import React, {useEffect, useState} from 'react';
 import * as Location from 'expo-location';
 import HomeScreen from './src/screens/HomeScreen';
 import {useDispatch} from 'react-redux';
+import DeviceInfo from 'react-native-device-info';
+import {getLocales} from 'expo-localization';
+
 import {getLocationAddress} from './src/app/slices/locationSlice';
 
 export default function App() {
@@ -52,6 +55,7 @@ export default function App() {
       return false;
     }
   };
+
   useEffect(() => {
     (async () => {
       let status = await checkLocation();
