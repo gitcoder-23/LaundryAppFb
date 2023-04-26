@@ -6,7 +6,10 @@ import {useDispatch} from 'react-redux';
 import DeviceInfo from 'react-native-device-info';
 import {getLocales} from 'expo-localization';
 
-import {getLocationAddress} from './src/app/slices/locationSlice';
+import {
+  getLocationAddress,
+  getCountryCode,
+} from './src/app/slices/locationSlice';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -93,9 +96,11 @@ export default function App() {
 
         for (let item of response) {
           let address = `${item.name}, ${item.city}, ${item.postalCode}`;
+          let cCode = item.isoCountryCode;
 
           console.log('get-address-.', address);
           dispatch(getLocationAddress(address));
+          dispatch(getCountryCode(cCode));
           // setdisplayCurrentAddress(address);
         }
       }

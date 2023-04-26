@@ -14,17 +14,21 @@ import Services from '../components/Services';
 import DressItem from '../components/DressItem';
 import {useDispatch, useSelector} from 'react-redux';
 import {getProducts} from '../app/slices/productSlice';
-
+// import PhoneInput from 'react-native-phone-number-input';
+import PhoneInput from 'react-native-phone-input';
 const HomeScreen = () => {
   const {cart} = useSelector(state => state.cart);
-  const {currentAddress} = useSelector(state => state.currentlocation);
+  // const phoneInput = React.useRef(null);
+  const {currentAddress, countryCode} = useSelector(
+    state => state.currentlocation,
+  );
 
-  console.log('state-cart-->', cart);
+  // console.log('state-cart-->', cart);
   console.log('currentAddress-home-state-->', currentAddress);
+  console.log('countryCode-home-->', countryCode);
+  const [phoneNumber, setPhoneNumber] = useState('');
 
   const {allProduct} = useSelector(state => state.product);
-
-  console.log('state-allProduct-->', allProduct);
 
   const dispatch = useDispatch();
 
@@ -89,7 +93,10 @@ const HomeScreen = () => {
       };
       fetchProducts();
     }
+    setPhoneNumber(countryCode.toLowerCase());
   }, []);
+
+  console.log('phoneNumber-->', countryCode.toLowerCase());
 
   return (
     <ScrollView>
@@ -131,6 +138,22 @@ const HomeScreen = () => {
       </View>
       {/* Image Carousel */}
       <Carousel />
+
+      {/* <PhoneInput
+        ref={phoneInput}
+        defaultValue={phoneNumber}
+        containerStyle={styles.phoneContainer}
+        textContainerStyle={styles.textInput}
+        onChangeFormattedText={text => {
+          setPhoneNumber(text);
+        }}
+        defaultCode={countryCode}
+        layout="first"
+        withShadow
+        autoFocus
+      /> */}
+
+      <PhoneInput initialCountry={'us'} />
       {/* Services Component */}
       <Services />
 
